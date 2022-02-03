@@ -27,3 +27,17 @@ function updateJSON(key, newValue, json) {
             return jsonUpdate;
         }, {});
 }
+
+/**
+ * Returns an array with a sequence.
+ *
+ * @param {number} start Beginning of the range.
+ * @param {number} stop End of range.
+ * @param {number} step Interval between numbers. Default is 1.
+ * @return {array}
+ */
+function range(start, stop=undefined, step=1) {
+    const startArray = stop  === undefined ? 0 : start;
+    const stopArray = stop  === undefined ? start : stop;
+    return Array.from({ length: (stopArray - startArray) / step + 1}, (_, i) => startArray + (i * step));
+}
