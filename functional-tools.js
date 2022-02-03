@@ -4,7 +4,7 @@
  * @param {string} key
  * @param {string} newValue
  * @param {JSON} json
- * @returns {JSON}
+ * @return {JSON}
  *
  * Example
  * const person = {name: 'James', age: 20, pets: ['dog', 'cat']};
