@@ -34,7 +34,7 @@ function updateJSON(key, newValue, json) {
  * @param {number} start Beginning of the range.
  * @param {number} stop End of range.
  * @param {number} step Interval between numbers. Default is 1.
- * @return {array}
+ * @return {Array} Sequence.
  */
 function range(start, stop=undefined, step=1) {
     const startArray = stop  === undefined ? 0 : start;
