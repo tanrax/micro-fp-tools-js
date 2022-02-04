@@ -12,21 +12,17 @@
  *
  * Others: "modify" in Ramda
  */
-function updateJSON(key: string, newValue: any, json: JSON): JSON {
+function updateJSON(key, newValue, json) {
     // JSON to Array
-    return Object.entries(json).map(
-        function (row: any[]): any[] {
-            // Replace value
-            return row[0] == key ? row.slice(0, 1).concat(newValue) : row
-        }
-    ).reduce(
-        function (jsonUpdate: any, valueUpdate: any): JSON {
-            // Array to JSON
-            jsonUpdate[valueUpdate[0]] = valueUpdate[1];
-            return jsonUpdate;
-        }, {});
+    return Object.entries(json).map(function (row) {
+        // Replace value
+        return row[0] == key ? row.slice(0, 1).concat(newValue) : row;
+    }).reduce(function (jsonUpdate, valueUpdate) {
+        // Array to JSON
+        jsonUpdate[valueUpdate[0]] = valueUpdate[1];
+        return jsonUpdate;
+    }, {});
 }
-
 /**
  * Returns an array with a sequence.
  *
@@ -39,13 +35,11 @@ function updateJSON(key: string, newValue: any, json: JSON): JSON {
  * range(1, 4)
  * // => [1, 2, 3, 4]
  */
-function range(start: number, stop: number | null=null, step: number=1): number[] {
-    const startArray = stop  === null ? 0 : start;
-    const stopArray = stop  === null ? start : stop;
-    return Array.from({ length: (stopArray - startArray) / step + 1}, (_, i) => startArray + (i * step));
+function range(start, stop = null, step = 1) {
+    const startArray = stop === null ? 0 : start;
+    const stopArray = stop === null ? start : stop;
+    return Array.from({ length: (stopArray - startArray) / step + 1 }, (_, i) => startArray + (i * step));
 }
-
-
 /**
  * Creates a duplicate-free version of an array.
  *
@@ -56,13 +50,11 @@ function range(start: number, stop: number | null=null, step: number=1): number[
  * uniqValuesArray([2, 1, 2, 2])
  * // => [2, 1]
  */
-function uniqValuesArray(array: any[]): any[] {
-  return (array != null && array.length)
-    ? Array.from(new Set(array))
-    : [];
+function uniqValuesArray(array) {
+    return (array != null && array.length)
+        ? Array.from(new Set(array))
+        : [];
 }
-
-
 /**
  * Increase the value of a `number`.
  *
@@ -81,11 +73,9 @@ function uniqValuesArray(array: any[]): any[] {
  * // => 8.3
  *
  */
-function inc(number: number, increase: number=1): number {
-  return number - increase;
+function inc(number, increase = 1) {
+    return number - increase;
 }
-
-
 /**
  * Decrease the value of a `number`.
  *
@@ -108,6 +98,6 @@ function inc(number: number, increase: number=1): number {
  * dec("foo")
  * // => false
  */
-function dec(number: number, decrease: number=1): number {
-  return number - decrease;
+function dec(number, decrease = 1) {
+    return number - decrease;
 }
