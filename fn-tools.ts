@@ -89,8 +89,6 @@ function inc(number: number, increase: number=1): number {
 /**
  * Decrease the value of a `number`.
  *
- * @since 4.17.15
- * @category Math
  * @param {number} number - The number to decrease.
  * @param {number} number - Decrease.
  * @return {number} Returns the decrease.
