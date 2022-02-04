@@ -1,27 +1,26 @@
-
 /**
  * Returns a JSON with an updated value
  * @param {string} key
  * @param {string} newValue
  * @param {JSON} json
  * @return {JSON}
+ * @example
  *
- * Example
  * const person = {name: 'James', age: 20, pets: ['dog', 'cat']};
  * updateJSON('name', 'maria', person);
  * // {"age": 20, "name": "maria", "pets": ["dog", "cat"]}
  *
  * Others: "modify" in Ramda
  */
-function updateJSON(key, newValue, json) {
+function updateJSON(key: string, newValue: any, json: JSON): JSON {
     // JSON to Array
     return Object.entries(json).map(
-        function (row) {
+        function (row: any[]): any[] {
             // Replace value
             return row[0] == key ? row.slice(0, 1).concat(newValue) : row
         }
     ).reduce(
-        function (jsonUpdate, valueUpdate) {
+        function (jsonUpdate: any, valueUpdate: any): JSON {
             // Array to JSON
             jsonUpdate[valueUpdate[0]] = valueUpdate[1];
             return jsonUpdate;
@@ -42,9 +41,9 @@ export default updateJSON
  * range(1, 4)
  * // => [1, 2, 3, 4]
  */
-function range(start: number, stop: number=undefined, step: number=1): number[] {
-    const startArray = stop  === undefined ? 0 : start;
-    const stopArray = stop  === undefined ? start : stop;
+function range(start: number, stop: number | null=null, step: number=1): number[] {
+    const startArray = stop  === null ? 0 : start;
+    const stopArray = stop  === null ? start : stop;
     return Array.from({ length: (stopArray - startArray) / step + 1}, (_, i) => startArray + (i * step));
 }
 
