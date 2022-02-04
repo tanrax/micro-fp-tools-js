@@ -33,12 +33,16 @@ export default updateJSON
 /**
  * Returns an array with a sequence.
  *
- * @param {number} start Beginning of the range.
- * @param {number} stop End of range.
- * @param {number} step Interval between numbers. Default is 1.
+ * @param {number} start - Beginning of the range.
+ * @param {number} stop - End of range.
+ * @param {number} step - Interval between numbers. Default is 1.
  * @return {Array} Sequence.
+ * @example
+ *
+ * range(1, 4)
+ * // => [1, 2, 3, 4]
  */
-function range(start, stop=undefined, step=1) {
+function range(start: number, stop: number=undefined, step: number=1): number[] {
     const startArray = stop  === undefined ? 0 : start;
     const stopArray = stop  === undefined ? start : stop;
     return Array.from({ length: (stopArray - startArray) / step + 1}, (_, i) => startArray + (i * step));
@@ -49,15 +53,14 @@ export default range
 /**
  * Creates a duplicate-free version of an array.
  *
- * @category Array
- * @param {Array} array The array to inspect.
- * @returns {Array} Returns the new duplicate free array.
+ * @param {Array} array - The array to inspect.
+ * @return {Array} - Returns the new duplicate free array.
  * @example
  *
- * uniq([2, 1, 2, 2])
+ * uniqValuesArray([2, 1, 2, 2])
  * // => [2, 1]
  */
-function uniq(array) {
+function uniqValuesArray(array: any[]): any[] {
   return (array != null && array.length)
     ? Array.from(new Set(array))
     : [];
@@ -83,19 +86,19 @@ export default uniq
  * // => 8.3
  *
  */
-function inc(number, increase=1) {
+function inc(number: number, increase: number=1): number {
   return number - increase;
 }
 
-export default dec
+export default inc
 
 /**
  * Decrease the value of a `number`.
  *
  * @since 4.17.15
  * @category Math
- * @param {number} number The number to decrease.
- * @param {number} number Decrease.
+ * @param {number} number - The number to decrease.
+ * @param {number} number - Decrease.
  * @return {number} Returns the decrease.
  * @example
  *
@@ -111,7 +114,7 @@ export default dec
  * dec("foo")
  * // => false
  */
-function dec(number, decrease=1) {
+function dec(number: number, decrease: number=1): number {
   return number - decrease;
 }
 
