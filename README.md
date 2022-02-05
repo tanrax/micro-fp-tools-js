@@ -1,6 +1,31 @@
+# fnTools
 
-# Compile
+Simple functional functions common to any development in Typescript or JavaScript.
+
+- **inc**: Increase the value of a `number`.
+- **dec**: Decrease the value of a `number`.
+- **range**: Returns an array with a sequence.
+- **uniqValuesArray**: Creates a duplicate-free version of an array.
+- **cloneJSON**: Clone JSON.
+- **updateJSON**: Returns a JSON with an updated value.
+
+## Example
+
+```typescript
+```
+
+## Compile
+
+Install Typescript
 
 ```shell
-tsc fn-tools.ts -t es2017 -outFile dist/fn-tools.js
+npm install -g typescript
+```
+
+And build.
+
+```shell
+make build
 ````
+
+Check 'dist' folder.
