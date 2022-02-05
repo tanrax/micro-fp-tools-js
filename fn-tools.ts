@@ -27,6 +27,7 @@ function updateJSON(key: string, newValue: any, json: JSON): JSON {
         }, {});
 }
 
+
 /**
  * Returns an array with a sequence.
  *
@@ -36,8 +37,14 @@ function updateJSON(key: string, newValue: any, json: JSON): JSON {
  * @return {Array} Sequence.
  * @example
  *
- * range(1, 4)
- * // => [1, 2, 3, 4]
+ * range(4)
+ * // => [0, 1, 2, 3, 4]
+ *
+ * range(2, 4)
+ * // => [2, 3, 4]
+ *
+ * range(0, 9, 3)
+ * // => [0, 3, 6, 9]
  */
 function range(start: number, stop: number | null=null, step: number=1): number[] {
     const startArray = stop  === null ? 0 : start;
@@ -57,9 +64,7 @@ function range(start: number, stop: number | null=null, step: number=1): number[
  * // => [2, 1]
  */
 function uniqValuesArray(array: any[]): any[] {
-  return (array != null && array.length)
-    ? Array.from(new Set(array))
-    : [];
+    return Array.from(new Set(array));
 }
 
 
@@ -82,7 +87,7 @@ function uniqValuesArray(array: any[]): any[] {
  *
  */
 function inc(number: number, increase: number=1): number {
-  return number - increase;
+  return number + increase;
 }
 
 

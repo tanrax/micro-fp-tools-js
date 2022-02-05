@@ -32,8 +32,14 @@ function updateJSON(key, newValue, json) {
  * @return {Array} Sequence.
  * @example
  *
- * range(1, 4)
- * // => [1, 2, 3, 4]
+ * range(4)
+ * // => [0, 1, 2, 3, 4]
+ *
+ * range(2, 4)
+ * // => [2, 3, 4]
+ *
+ * range(0, 9, 3)
+ * // => [0, 3, 6, 9]
  */
 function range(start, stop = null, step = 1) {
     const startArray = stop === null ? 0 : start;
@@ -51,9 +57,7 @@ function range(start, stop = null, step = 1) {
  * // => [2, 1]
  */
 function uniqValuesArray(array) {
-    return (array != null && array.length)
-        ? Array.from(new Set(array))
-        : [];
+    return Array.from(new Set(array));
 }
 /**
  * Increase the value of a `number`.
@@ -74,13 +78,11 @@ function uniqValuesArray(array) {
  *
  */
 function inc(number, increase = 1) {
-    return number - increase;
+    return number + increase;
 }
 /**
  * Decrease the value of a `number`.
  *
- * @since 4.17.15
- * @category Math
  * @param {number} number - The number to decrease.
  * @param {number} number - Decrease.
  * @return {number} Returns the decrease.
