@@ -12,6 +12,10 @@ Simple functional functions common to any development in Typescript or JavaScrip
 ## Example
 
 ```typescript
+import * as fn from 'fnTools'
+
+fn.range(4);
+// [0, 1, 2, 3, 4]
 ```
 
 ## Compile
