@@ -8,14 +8,24 @@ Simple functional functions common to any development in Typescript or JavaScrip
 - **uniqValuesArray**: Creates a duplicate-free version of an array.
 - **cloneJSON**: Clone JSON.
 - **updateJSON**: Returns a JSON with an updated value.
+- **getRandom**: Returns a random number from a range, with an optional number of decimal places.
 
 ## Example
 
-```typescript
-import * as fn from 'fnTools'
+```javascript
+import * as fn from 'fnTools.js';
+
+fn.getRandom(0, 6);
+// 2
 
 fn.range(4);
 // [0, 1, 2, 3, 4]
+```
+
+## CDN
+
+```html
+<script type="module" src="https://cdn.jsdelivr.net/gh/tanrax/fn-js/dist/fnTools.min.js"></script>
 ```
 
 ## Compile

@@ -1,7 +1,7 @@
 define("fnTools", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.cloneJSON = exports.uniqValuesArray = exports.updateJSON = exports.range = exports.dec = exports.inc = void 0;
+    exports.getRandom = exports.cloneJSON = exports.uniqValuesArray = exports.updateJSON = exports.range = exports.dec = exports.inc = void 0;
     /**
      * Increase the value of a `number`.
      *
@@ -16,7 +16,7 @@ define("fnTools", ["require", "exports"], function (require, exports) {
      * inc(5, 3)
      * // => 8
      *
-     * dec(7.3)
+     * inc(7.3)
      * // => 8.3
      *
      */
@@ -130,4 +130,26 @@ define("fnTools", ["require", "exports"], function (require, exports) {
         return JSON.parse(JSON.stringify(json));
     }
     exports.cloneJSON = cloneJSON;
+    /**
+     * Return random number.
+     *
+     * @param {number} min - Minimum number. It is inclusive.
+     * @param {number} max - Maximum number. It is inclusive.
+     * @param {number} decimals - Number of decimals. Default 0.
+     * @return {number}
+     * @example
+     *
+     * getRandom(0, 4)
+     * // => 3 (Maybe)
+     *
+     * getRandom(0, 10, 2)
+     * // => 8.31 (Maybe)
+     *
+     */
+    function getRandom(min, max, decimals = 0) {
+        const minRandom = Math.ceil(min);
+        const maxRandom = Math.floor(max);
+        return (Math.random() * (maxRandom - minRandom + 1) + minRandom).toFixed(decimals);
+    }
+    exports.getRandom = getRandom;
 });

@@ -133,3 +133,26 @@ export function uniqValuesArray(array: any[]): any[] {
 export function cloneJSON(json: JSON): JSON {
   return JSON.parse(JSON.stringify(json));
 }
+
+
+/**
+ * Return random number.
+ *
+ * @param {number} min - Minimum number. It is inclusive.
+ * @param {number} max - Maximum number. It is inclusive.
+ * @param {number} decimals - Number of decimals. Default 0.
+ * @return {number}
+ * @example
+ *
+ * getRandom(0, 4)
+ * // => 3 (Maybe)
+ *
+ * getRandom(0, 10, 2)
+ * // => 8.31 (Maybe)
+ *
+ */
+export function getRandom(min, max, decimals=0) {
+  const minRandom = Math.ceil(min);
+  const maxRandom = Math.floor(max);
+  return (Math.random() * (maxRandom - minRandom + 1) + minRandom).toFixed(decimals);
+}
