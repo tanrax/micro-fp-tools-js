@@ -163,7 +163,7 @@ export function getRandom(min, max, decimals=0) {
  * @param {Array<File>} list - List of files.
  * @return number
  */
-function getIndexOfFileList(name: string, list: Array<File>): number {
+export function getIndexOfFileList(name: string, list: Array<File>): number {
     return list.reduce(
         (position, file, index) => (file.name === name ? index : position),
         -1
