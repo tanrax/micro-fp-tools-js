@@ -169,3 +169,13 @@ export function getIndexOfFileList(name: string, list: Array<File>): number {
         -1
     );
 }
+
+/**
+ * Returns a copy of the array by removing one position by index.
+ * @param {Array} list
+ * @param {number} index
+ * @return {Array} list
+ */
+export function deleteArrayElementByIndex(list: Array<any>, index: number) {
+    return list.filter((item, itemIndex) => itemIndex !== index);
+}
