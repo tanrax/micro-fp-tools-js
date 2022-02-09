@@ -9,6 +9,7 @@ Simple functional functions common to any development in Typescript or JavaScrip
 - **cloneJSON**: Clone JSON.
 - **updateJSON**: Returns a JSON with an updated value.
 - **getRandom**: Returns a random number from a range, with an optional number of decimal places.
+- **getIndexOfFileList**: Returns the index of an Array of Files from its name. If there are multiple files with the same name, the last one will be returned.
 
 ## Example
 
