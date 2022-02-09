@@ -156,3 +156,16 @@ export function getRandom(min, max, decimals=0) {
   const maxRandom = Math.floor(max);
   return (Math.random() * (maxRandom - minRandom + 1) + minRandom).toFixed(decimals);
 }
+
+/**
+ * Returns the index of an Array of Files from its name. If there are multiple files with the same name, the last one will be returned.
+ * @param {string} name - Name file.
+ * @param {Array<File>} list - List of files.
+ * @return number
+ */
+function getIndexOfFileList(name: string, list: Array<File>): number {
+    return list.reduce(
+        (position, file, index) => (file.name === name ? index : position),
+        -1
+    );
+}
