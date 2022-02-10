@@ -176,7 +176,7 @@ export function getIndexOfFileList(name: string, list: Array<File>): number {
  * @param {number} index
  * @return {Array} list
  */
-export function deleteArrayElementByIndex(list: Array<any>, index: number) {
+export function deleteArrayElementByIndex(list: Array<any>, index: number): FileList {
     return list.filter((item, itemIndex) => itemIndex !== index);
 }
 
