@@ -24,6 +24,7 @@ Simple functional functions common to any development in Typescript or JavaScrip
 
 - **getIndexOfFileList**: Returns the index of an Array of Files from its name. If there are multiple files with the same name, the last one will be returned.
 - **arrayFilesToFileList**: Returns a FileLists from an array containing Files.
+- **encodeFileToText**: Returns a File in text.
 
 ## Example
 
