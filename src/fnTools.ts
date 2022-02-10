@@ -172,11 +172,15 @@ export function getIndexOfFileList(name: string, list: Array<File>): number {
 
 /**
  * Returns a copy of the array by removing one position by index.
- * @param {Array} list
  * @param {number} index
+ * @param {Array} list
  * @return {Array} list
+ * @example
+ *
+ * deleteArrayElementByIndex(2, ['a', 'b', 'c', 'd'])
+ * // => ['a', 'b', 'd']
  */
-export function deleteArrayElementByIndex(list: Array<any>, index: number): FileList {
+export function deleteArrayElementByIndex(index: number, list: Array<any>): FileList {
     return list.filter((item, itemIndex) => itemIndex !== index);
 }
 
@@ -197,6 +201,10 @@ export function arrayFilesToFileList(filesList) {
  * @param {number} firstIndex
  * @param {number} secondIndex
  * @param {Array<any>} list
+ * @example
+ *
+ * arraySwapIndex(0, 2, ['a', 'b', 'c', 'd'])
+ * // => ['c', 'b', 'a', 'd']
  */
 export function arraySwapIndex(firstIndex: number, secondIndex: number, list: Array<any>): Array<any> {
     const tempList = list.slice();
