@@ -191,3 +191,17 @@ export function arrayFilesToFileList(filesList) {
         return dataTransfer;
     }, new DataTransfer()).files;
 }
+
+/**
+ * Returns a copy of the Array by swapping 2 indices.
+ * @param {number} firstIndex
+ * @param {number} secondIndex
+ * @param {Array<any>} list
+ */
+export function arraySwapIndex(firstIndex: number, secondIndex: number, list: Array<any>): Array<any> {
+    const tempList = list.slice();
+    const tmpFirstPos = tempList[firstIndex];
+    tempList[firstIndex] = tempList[secondIndex];
+    tempList[secondIndex] = tmpFirstPos;
+    return tempList;
+}
