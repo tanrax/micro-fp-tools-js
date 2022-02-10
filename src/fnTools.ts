@@ -179,3 +179,15 @@ export function getIndexOfFileList(name: string, list: Array<File>): number {
 export function deleteArrayElementByIndex(list: Array<any>, index: number) {
     return list.filter((item, itemIndex) => itemIndex !== index);
 }
+
+/**
+ * Returns a FileLists from an array containing Files.
+ * @param {Array<File>} filesList
+ * @return {FileList}
+ */
+export function arrayFilesToFileList(filesList) {
+    return filesList.reduce(function (dataTransfer, file) {
+        dataTransfer.items.add(file);
+        return dataTransfer;
+    }, new DataTransfer()).files;
+}
