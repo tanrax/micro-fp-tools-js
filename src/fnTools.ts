@@ -225,3 +225,30 @@ export async function encodeFileToText(file: File): Promise<string> {
         return text;
     });
 }
+
+/**
+ * Returns an Array from the union of 2 Arrays of Files avoiding repetitions.
+ * @param {Array<File>} newFiles
+ * @param {Array<File>} currentListFiles
+ * @return Promise<File[]>
+ */
+export async function getUniqFiles(newFiles: Array<File>, currentListFiles: Array<File>): Promise<File[]> {
+    return new Promise((resolve) => {
+        Promise.all(newFiles.map((inputFile) => encodeFileToText(inputFile))).then(
+            (inputFilesText) => {
+                // Check all the files to save
+                Promise.all(
+                    currentListFiles.map((savedFile) => encodeFileToText(savedFile))
+                ).then((savedFilesText) => {
+                    let newFileList = currentListFiles;
+                    inputFilesText.forEach((inputFileText, index) => {
+                        if (!savedFilesText.includes(inputFileText)) {
+                            newFileList = newFileList.concat(newFiles[index]);
+                        }
+                    });
+                    resolve(newFileList);
+                });
+            }
+        );
+    });
+}
