@@ -9,9 +9,11 @@ Simple functional functions common to any development in Typescript or JavaScrip
 - **getRandom**: Returns a random number from a range, with an optional number of decimal places.
 
 ## Array
+
 - **range**: Returns an array with a sequence.
 - **uniqValuesArray**: Creates a duplicate-free version of an array.
 - **deleteArrayElementByIndex**: Returns a copy of the array by removing one position by index.
+- **arraySwapIndex**: Returns a copy of the Array by swapping 2 indices.
 
 ## JSON
 
