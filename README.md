@@ -2,25 +2,36 @@
 
 Simple functional functions common to any development in Typescript or JavaScript.
 
+## Number
+
 - **inc**: Increase the value of a `number`.
 - **dec**: Decrease the value of a `number`.
+- **getRandom**: Returns a random number from a range, with an optional number of decimal places.
+
+## Array
 - **range**: Returns an array with a sequence.
 - **uniqValuesArray**: Creates a duplicate-free version of an array.
+- **deleteArrayElementByIndex**: Returns a copy of the array by removing one position by index.
+
+## JSON
+
 - **cloneJSON**: Clone JSON.
 - **updateJSON**: Returns a JSON with an updated value.
-- **getRandom**: Returns a random number from a range, with an optional number of decimal places.
-- **deleteArrayElementByIndex**: Returns a copy of the array by removing one position by index.
+
+## File
+
 - **getIndexOfFileList**: Returns the index of an Array of Files from its name. If there are multiple files with the same name, the last one will be returned.
+- **arrayFilesToFileList**: Returns a FileLists from an array containing Files.
 
 ## Example
 
 ```javascript
-import * as fn from 'fnTools.js';
+import {getRandom, range} from 'fnTools.js';
 
-fn.getRandom(0, 6);
+getRandom(0, 6);
 // 2
 
-fn.range(4);
+range(4);
 // [0, 1, 2, 3, 4]
 ```
 
