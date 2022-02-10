@@ -213,3 +213,15 @@ export function arraySwapIndex(firstIndex: number, secondIndex: number, list: Ar
     tempList[secondIndex] = tmpFirstPos;
     return tempList;
 }
+
+
+/**
+ * Returns a File in text.
+ * @param {File} file
+ * @return {Promise<string>}
+ */
+export async function encodeFileToText(file: File): Promise<string> {
+    return file.text().then((text) => {
+        return text;
+    });
+}
