@@ -14,10 +14,10 @@ range(4);
 // [0, 1, 2, 3, 4]
 ```
 
-## CDN
+## Install
 
-```html
-<script type="module" src="https://cdn.jsdelivr.net/gh/tanrax/fn-js/dist/fnTools.min.js"></script>
+```shell
+npm install micro-fp-tools
 ```
 
 ## Documentation
