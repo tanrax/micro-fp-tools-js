@@ -180,7 +180,7 @@ export function getIndexOfFileList(name: string, list: Array<File>): number {
  * deleteArrayElementByIndex(2, ['a', 'b', 'c', 'd'])
  * // => ['a', 'b', 'd']
  */
-export function deleteArrayElementByIndex(index: number, list: Array<any>): FileList {
+export function deleteArrayElementByIndex(index: number, list: Array<any>): Array<any> {
     return list.filter((item, itemIndex) => itemIndex !== index);
 }
 

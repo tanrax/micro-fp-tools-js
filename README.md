@@ -59,7 +59,7 @@ npm install -g typescript
 And build.
 
 ```shell
-npm build
+npm run build
 ````
 
 Check 'dist' folder.

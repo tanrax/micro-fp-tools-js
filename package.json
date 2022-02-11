@@ -1,10 +1,10 @@
 {
   "name": "micro-fp-tools",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Simple functional functions common to any development in Typescript or JavaScript.",
   "main": "dist/fnTools.js",
   "scripts": {
-    "build": "tsc multi-selector-uniq.ts --lib esnext,dom"
+    "build": "tsc src/index.ts --lib esnext,dom --outDir dist/"
   },
   "repository": {
     "type": "git",
