@@ -1,4 +1,4 @@
-# Micro FP Tools by JavaScript
+# Micro Functional Programming tools by JavaScript
 
 Simple functional functions common to any development in Typescript or JavaScript.
 
