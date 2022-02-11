@@ -1,0 +1,24 @@
+{
+  "name": "micro-fp-tools",
+  "version": "0.1.0",
+  "description": "Simple functional functions common to any development in Typescript or JavaScript.",
+  "main": "dist/fnTools.js",
+  "scripts": {
+    "build": "tsc multi-selector-uniq.ts --lib esnext,dom"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanrax/micro-fp-tools-js.git"
+  },
+  "keywords": [
+    "typescript",
+    "javascript",
+    "functional-programming"
+  ],
+  "author": "Andros Fenollosa",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/tanrax/micro-fp-tools-js/issues"
+  },
+  "homepage": "https://github.com/tanrax/micro-fp-tools-js#readme"
+}
