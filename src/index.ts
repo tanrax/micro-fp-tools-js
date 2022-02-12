@@ -151,7 +151,7 @@ export function cloneJSON(json: JSON): JSON {
  * // => 8.31 (Maybe)
  *
  */
-export function getRandom(min, max, decimals=0) {
+export function getRandom(min: number, max: number, decimals: number=0): number {
   const minRandom = Math.ceil(min);
   const maxRandom = Math.floor(max);
   return (Math.random() * (maxRandom - minRandom + 1) + minRandom).toFixed(decimals);
@@ -189,7 +189,7 @@ export function deleteArrayElementByIndex(index: number, list: Array<any>): Arra
  * @param {Array<File>} filesList
  * @return {FileList}
  */
-export function arrayFilesToFileList(filesList) {
+export function arrayFilesToFileList(filesList): Filelist {
     return filesList.reduce(function (dataTransfer, file) {
         dataTransfer.items.add(file);
         return dataTransfer;
