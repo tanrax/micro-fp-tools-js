@@ -214,6 +214,29 @@ export function arraySwapIndex(firstIndex: number, secondIndex: number, list: Ar
     return tempList;
 }
 
+/**
+ * Returns a copy of the list where an index has been moved to another position.
+ * @param {number} indexFrom
+ * @param {number} indexTo
+ * @param {Array<any>} list
+ * @example
+ *
+ * arrayMoveIndex(2, 0, ['a', 'b', 'c', 'd'])
+ * // => ['c', 'a', 'b', 'd']
+ */
+function arrayMoveIndex(indexFrom: number, indexTo: number, list: Array<any>): Array<any> {
+    // Save value to move
+    const moveValue = list[indexFrom];
+    // Deletes value to be moved
+    const listNotValue = list.filter(
+        (currentValue, currentIndex) => currentIndex != indexFrom
+    );
+    // Concat all fragments: start to position + moveValue + rest array
+    return listNotValue
+        .slice(0, indexTo)
+        .concat(moveValue, listNotValue.slice(indexTo));
+}
+
 
 /**
  * Returns a File in text.
