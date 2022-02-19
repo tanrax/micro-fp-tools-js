@@ -5,9 +5,9 @@ Simple functional functions common to any development in Typescript or JavaScrip
 ## Example
 
 ```javascript
-import {getRandom, range} from 'fnTools.js';
+import {random, range} from 'fnTools.js';
 
-getRandom(0, 6);
+random(0, 6);
 // 2
 
 range(4);
@@ -27,7 +27,7 @@ npm install micro-fp-tools
 
 - **inc**: Increase the value of a `number`.
 - **dec**: Decrease the value of a `number`.
-- **getRandom**: Returns a random number from a range, with an optional number of decimal places.
+- **random**: Returns a random number from a range, with an optional number of decimal places.
 
 ### Array
 
