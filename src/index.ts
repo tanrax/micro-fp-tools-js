@@ -144,14 +144,14 @@ export function cloneJSON(json: JSON): JSON {
  * @return {number}
  * @example
  *
- * getRandom(0, 4)
+ * random(0, 4)
  * // => 3 (Maybe)
  *
- * getRandom(0, 10, 2)
+ * random(0, 10, 2)
  * // => 8.31 (Maybe)
  *
  */
-export function getRandom(min: number, max: number, decimals: number=0): number {
+export function random(min: number, max: number, decimals: number=0): number {
   const minRandom = Math.ceil(min);
   const maxRandom = Math.floor(max);
   return (Math.random() * (maxRandom - minRandom + 1) + minRandom).toFixed(decimals);
