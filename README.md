@@ -33,6 +33,7 @@ npm install micro-fp-tools
 
 - **range**: Returns an list with a sequence.
 - **uniqValuesArray**: Creates a duplicate-free version of an array.
+- **randomUniqList**: Returns a list of non-repeating random numbers.
 - **deleteArrayElementByIndex**: Returns a copy of the list by removing one position by index.
 - **arraySwapIndex**: Returns a copy of the list by swapping 2 indices.
 - **arrayMoveIndex**: Returns a copy of the list where an index has been moved to another position.
