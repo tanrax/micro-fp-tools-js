@@ -157,8 +157,29 @@ export function getRandom(min: number, max: number, decimals: number=0): number 
   return (Math.random() * (maxRandom - minRandom + 1) + minRandom).toFixed(decimals);
 }
 
+
 /**
- * Returns the index of an Array of Files from its name. If there are multiple files with the same name, the last one will be returned.
+ * Returns a list of non-repeating random numbers.
+ *
+ * @param {number} long - Length.
+ * @param {number} list - Initial list.
+ * @return {number}
+ * @example
+ *
+ * getRandom(6)
+ * // [ 1, 3, 0, 5, 4, 2 ]
+ *
+ *
+ */
+export function randomUniqList(long: number, list=[]: Array<any>): Array<any> {
+    return list.length >= long ? list : randomUniqList(long, Array.from(
+        new Set(
+            list
+            .concat(Math.floor(Math.random() * long)))))
+}
+
+/**
+ * Returns the index of an list of Files from its name. If there are multiple files with the same name, the last one will be returned.
  * @param {string} name - Name file.
  * @param {Array<File>} list - List of files.
  * @return number
@@ -171,7 +192,7 @@ export function getIndexOfFileList(name: string, list: Array<File>): number {
 }
 
 /**
- * Returns a copy of the array by removing one position by index.
+ * Returns a copy of the list by removing one position by index.
  * @param {number} index
  * @param {Array} list
  * @return {Array} list
@@ -185,7 +206,7 @@ export function deleteArrayElementByIndex(index: number, list: Array<any>): Arra
 }
 
 /**
- * Returns a FileLists from an array containing Files.
+ * Returns a FileLists from an list containing Files.
  * @param {Array<File>} filesList
  * @return {FileList}
  */
@@ -197,7 +218,7 @@ export function arrayFilesToFileList(filesList): Filelist {
 }
 
 /**
- * Returns a copy of the Array by swapping 2 indices.
+ * Returns a copy of the list by swapping 2 indices.
  * @param {number} firstIndex
  * @param {number} secondIndex
  * @param {Array<any>} list
@@ -224,7 +245,7 @@ export function arraySwapIndex(firstIndex: number, secondIndex: number, list: Ar
  * arrayMoveIndex(2, 0, ['a', 'b', 'c', 'd'])
  * // => ['c', 'a', 'b', 'd']
  */
-function arrayMoveIndex(indexFrom: number, indexTo: number, list: Array<any>): Array<any> {
+export function arrayMoveIndex(indexFrom: number, indexTo: number, list: Array<any>): Array<any> {
     // Save value to move
     const moveValue = list[indexFrom];
     // Deletes value to be moved
