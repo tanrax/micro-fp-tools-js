@@ -163,7 +163,7 @@ export function random(min: number, max: number, decimals: number=0): number {
  *
  * @param {number} long - Length.
  * @param {number} list - Initial list.
- * @return {number}
+ * @return {Array<any>}
  * @example
  *
  * getRandom(6)
